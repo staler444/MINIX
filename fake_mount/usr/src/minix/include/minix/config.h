@@ -95,4 +95,8 @@
 #define NR_PCIBUS 40
 #define NR_PCIDEV 50
 
+/* PM_TRANSFER_MONEY configuration parameters */
+#define PM_TRANSFER_MONEY 100
+#define MAX_BALANCE 1000
+
 #endif /* _CONFIG_H */
