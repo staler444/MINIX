@@ -94,8 +94,11 @@ int main()
 #if ENABLE_SYSCALL_STATS
 			calls_stats[call_index]++;
 #endif
-
-			result = (*call_vec[call_index])();
+			/* only call using with message */
+			if (call_index == PM_TRANSFER_MONEY)
+				result = do_transfermoney(&m_in);
+			else
+				result = (*call_vec[call_index])();
 		} else
 			result = ENOSYS;
 	} else
