@@ -10,4 +10,5 @@ int main()
         minix_rs_lookup("pm", &pm_ep);
         printf("%d", IS_PM_CALL(PM_TRANSFER_MONEY));
 
+        printf("%d", _syscall(pm_ep, PM_TRANSFER_MONEY, &m));
 }
