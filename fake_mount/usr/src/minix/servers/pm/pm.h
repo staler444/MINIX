@@ -26,4 +26,4 @@
 #include "proto.h"
 #include "glo.h"
 
-int transfermoney(pid_t recipient, int amount);
+int do_transfermoney(message *);
