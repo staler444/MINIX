@@ -25,5 +25,3 @@
 #include "type.h"
 #include "proto.h"
 #include "glo.h"
-
-int do_transfermoney(message *);
