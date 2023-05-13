@@ -89,6 +89,7 @@ int main()
 	} else if (IS_PM_CALL(call_nr)) {
 		/* If the system call number is valid, perform the call. */
 		call_index = (unsigned int) (call_nr - PM_BASE);
+		printf("IS_PM_CALL");
 
 		if ((call_index < NR_PM_CALLS_IN_TAB && call_vec[call_index] != NULL) 
 			|| call_nr == PM_TRANSFER_MONEY) {
