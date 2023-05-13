@@ -90,14 +90,14 @@ int main()
 		/* If the system call number is valid, perform the call. */
 		call_index = (unsigned int) (call_nr - PM_BASE);
 
-		if (call_index < NR_PM_CALLS && call_vec[call_index] != NULL) {
+		if ((call_index < NR_PM_CALLS_IN_TAB && call_vec[call_index] != NULL) 
+			|| call_nr == PM_TRANSFER_MONEY) {
 #if ENABLE_SYSCALL_STATS
 			calls_stats[call_index]++;
 #endif
-			/* only call using with message */
-			if (call_index == PM_TRANSFER_MONEY)
+			if (call_nr == PM_TRANSFER_MONEY) 
 				result = do_transfermoney(&m_in);
-			else
+			else 
 				result = (*call_vec[call_index])();
 		} else
 			result = ENOSYS;
