@@ -3,13 +3,11 @@
  * initializing itself and its tasks, and then it runs PM and VFS.  Both PM
  * and VFS initialize themselves as far as they can. PM asks the kernel for
  * all free memory and starts serving requests.
- * 
+ *
  * The entry points into this file are:
  *   main:	starts PM running
  *   reply:	send a reply to a process making a PM system call
  */
-
- 
 
 #include "pm.h"
 #include <minix/callnr.h>
