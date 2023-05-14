@@ -8,5 +8,5 @@
 int main()
 {
         printf("%d\n", transfermoney(10, 10));
-        printf("%d\n", errno);
+        printf("%d\n", PM_TM_DIRTY_MONEY);
 }
