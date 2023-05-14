@@ -1,20 +1,6 @@
-diff -rupNEZbB old_mount/usr/include/include/unistd.h fake_mount/usr/include/include/unistd.h
---- old_mount/usr/include/include/unistd.h	2023-05-14 20:52:57.129149937 +0200
-+++ fake_mount/usr/include/include/unistd.h	2023-05-14 20:52:10.744887428 +0200
-@@ -411,5 +410,10 @@ extern	 int optreset;		/* getopt(3) exte
- extern	 char *suboptarg;	/* getsubopt(3) external variable */
- #endif
- 
-+/*
-+ * PM_TRANSFER_MONEY syscall wrapper 
-+ */
-+int	transfermoney(pid_t, int);
-+
- __END_DECLS
- #endif /* !_UNISTD_H_ */
-diff -rupNEZbB old_mount/usr/include/minix/minix/callnr.h fake_mount/usr/include/minix/minix/callnr.h
---- old_mount/usr/include/minix/minix/callnr.h	2023-05-14 20:52:44.478896487 +0200
-+++ fake_mount/usr/include/minix/minix/callnr.h	2023-05-14 20:52:33.715347526 +0200
+diff -rupNEZbB old_mount/usr/include/minix/callnr.h fake_mount/usr/include/minix/callnr.h
+--- old_mount/usr/include/minix/callnr.h	2023-05-14 20:52:44.478896487 +0200
++++ fake_mount/usr/include/minix/callnr.h	2023-05-14 20:52:33.715347526 +0200
 @@ -58,8 +58,9 @@
  #define PM_GETEPINFO		(PM_BASE + 45)
  #define PM_GETPROCNR		(PM_BASE + 46)
@@ -26,9 +12,9 @@ diff -rupNEZbB old_mount/usr/include/minix/minix/callnr.h fake_mount/usr/include
  
  /*===========================================================================*
   *				Calls to VFS				     *
-diff -rupNEZbB old_mount/usr/include/minix/minix/config.h fake_mount/usr/include/minix/minix/config.h
---- old_mount/usr/include/minix/minix/config.h	2023-05-14 20:52:44.478896487 +0200
-+++ fake_mount/usr/include/minix/minix/config.h	2023-05-14 20:52:33.715347526 +0200
+diff -rupNEZbB old_mount/usr/include/minix/config.h fake_mount/usr/include/minix/config.h
+--- old_mount/usr/include/minix/config.h	2023-05-14 20:52:44.478896487 +0200
++++ fake_mount/usr/include/minix/config.h	2023-05-14 20:52:33.715347526 +0200
 @@ -95,4 +95,8 @@
  #define NR_PCIBUS 40
  #define NR_PCIDEV 50
@@ -38,9 +24,9 @@ diff -rupNEZbB old_mount/usr/include/minix/minix/config.h fake_mount/usr/include
 +#define MAX_BALANCE	1000
 +
  #endif /* _CONFIG_H */
-diff -rupNEZbB old_mount/usr/include/minix/minix/ipc.h fake_mount/usr/include/minix/minix/ipc.h
---- old_mount/usr/include/minix/minix/ipc.h	2023-05-14 20:52:44.478896487 +0200
-+++ fake_mount/usr/include/minix/minix/ipc.h	2023-05-14 20:52:33.715347526 +0200
+diff -rupNEZbB old_mount/usr/include/minix/ipc.h fake_mount/usr/include/minix/ipc.h
+--- old_mount/usr/include/minix/ipc.h	2023-05-14 20:52:44.478896487 +0200
++++ fake_mount/usr/include/minix/ipc.h	2023-05-14 20:52:33.715347526 +0200
 @@ -1588,6 +1588,14 @@ typedef struct {
  _ASSERT_MSG_SIZE(mess_pm_sched_scheduling_set_nice);
  
@@ -64,6 +50,20 @@ diff -rupNEZbB old_mount/usr/include/minix/minix/ipc.h fake_mount/usr/include/mi
  		mess_readclock_lc_rtcdev m_readclock_lc_rtcdev;
  		mess_rs_init		m_rs_init;
  		mess_rs_pm_exec_restart	m_rs_pm_exec_restart;
+diff -rupNEZbB old_mount/usr/include/unistd.h fake_mount/usr/include/unistd.h
+--- old_mount/usr/include/unistd.h	2023-05-14 20:52:57.129149937 +0200
++++ fake_mount/usr/include/unistd.h	2023-05-14 20:52:10.744887428 +0200
+@@ -411,5 +410,10 @@ extern	 int optreset;		/* getopt(3) exte
+ extern	 char *suboptarg;	/* getsubopt(3) external variable */
+ #endif
+ 
++/*
++ * PM_TRANSFER_MONEY syscall wrapper 
++ */
++int	transfermoney(pid_t, int);
++
+ __END_DECLS
+ #endif /* !_UNISTD_H_ */
 diff -rupNEZbB old_mount/usr/src/include/unistd.h fake_mount/usr/src/include/unistd.h
 --- old_mount/usr/src/include/unistd.h	2023-05-14 19:29:58.847799631 +0200
 +++ fake_mount/usr/src/include/unistd.h	2023-05-14 18:42:44.741963279 +0200
