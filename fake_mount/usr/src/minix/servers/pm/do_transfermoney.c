@@ -17,7 +17,7 @@ int dirty_money_check(struct mproc* a, struct mproc* b)
 int do_transfermoney(void) 
 {
 	pid_t dest_pid = m_in.m_pm_transfermoney.recipient;
-	int amount = m_in.m_pm_transgermoney.amount;
+	int amount = m_in.m_pm_transfermoney.amount;
 
 	if (amount < 0)
 		return EINVAL;
