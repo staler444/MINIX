@@ -27,14 +27,14 @@ int transfermoney(pid_t recipient, int amount)
 {
         if (amount < 0) {
                 errno = EINVAL;
-                return -1;
+                return -70;
         }
 
 	endpoint_t pm_pt;
         message m;
         if (get_pm_endpt(&pm_pt) != 0) {
                 errno = ENOSYS;
-                return -1;
+                return -69;
         }
 
 	m.m_pm_transfermoney.recipient = recipient;
