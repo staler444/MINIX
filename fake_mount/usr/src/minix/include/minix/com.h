@@ -969,21 +969,5 @@
 
 #define SUSPEND 	 -998 	/* status to suspend caller, reply later */
 
-/*===========================================================================*
- *		Messeges types for PM_TRANSFER_MONEY			     *
- *===========================================================================*/
-#define PM_TM_MSG_BASE 0x1700
-
-#define PM_TM_MSG_TRANSFER (PM_TM_MSG_BASE + 0)
-
-/*===========================================================================*
- *		Return error codes for PM_TRANSFER_MONEY		     *
- *===========================================================================*/
-#define PM_TM_PANIC		-1  /* unexpected error */
-#define PM_TM_NON_EXISTING_PID	-2  /* recipient does'nt exists */
-#define PM_TM_DIRTY_MONEY	-3  /* recipient and sender in 
-				     * ancestor - descendant relation */
-#define PM_TM_MONEY_OVERFLOW	-4  /* transfer infringes account 
-				     * limits constraints */
 
 #endif /* !_MINIX_COM_H */

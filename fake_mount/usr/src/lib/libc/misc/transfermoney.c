@@ -1,6 +1,6 @@
 #include <lib.h>
 #include <minix/rs.h>
-#include <minix/com.h>
+#include <minix/callnr.h>
 #include <errno.h>
 
 int get_pm_endpt(endpoint_t *pt)
@@ -36,7 +36,6 @@ int transfermoney(pid_t recipient, int amount)
                 return -1;
         }
 
-        m.m_type = PM_TM_MSG_TRANSFER;
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
 
