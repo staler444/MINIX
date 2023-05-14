@@ -18,7 +18,7 @@ void set_errno(int error_code)
                 case PM_TM_MONEY_OVERFLOW :
                         errno = EINVAL;
                 default : 
-                        errno = 0;
+                        errno = ENOSYS;
         }
 }
 
@@ -36,6 +36,7 @@ int transfermoney(pid_t recipient, int amount)
                 return -1;
         }
 
+        m.m_type = PM_TM_MSG_TRANSFER;
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
 
