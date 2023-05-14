@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include <lib.h>
 #include <minix/rs.h>
 
 int get_pm_endpt(endpoint_t *pt)
