@@ -2,7 +2,6 @@
 #include <minix/rs.h>
 #include <minix/callnr.h>
 #include <errno.h>
-#include <stdio.h>
 
 int get_pm_endpt(endpoint_t *pt)
 {
