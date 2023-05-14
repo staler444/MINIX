@@ -61,11 +61,11 @@
 
 #define PM_TRANSFER_MONEY	(PM_BASE + 48)
 	/* PM_TRANSFER_MONEY return error codes */
-#	define PM_TM_PANIC		-1	/* unexpected error */
-#	define PM_TM_NON_EXISTING_PID	-2	/* recipient does'nt exists */
-#	define PM_TM_DIRTY_MONEY	-3	/* recipient and sender in 
+#	define PM_TM_PANIC		-2	/* unexpected error */
+#	define PM_TM_NON_EXISTING_PID	-3	/* recipient does'nt exists */
+#	define PM_TM_DIRTY_MONEY	-4	/* recipient and sender in 
 						 * ancestor-descendant relation */
-#	define PM_TM_MONEY_OVERFLOW	-4	/* transfer infringes account
+#	define PM_TM_MONEY_OVERFLOW	-5	/* transfer infringes account
 						* limits constraints */
 
 #define NR_PM_CALLS		49	/* highest number from base plus one */
