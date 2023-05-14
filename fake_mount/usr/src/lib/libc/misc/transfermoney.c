@@ -16,8 +16,8 @@ int transfermoney(pid_t recipient, int amount)
                 return -1;
         }
 
-	m.mess_pm_transfermoney.recipient = recipient;
-	m.mess_pm_transfermoney.amount = amount;
+	m.m_pm_transfermoney.recipient = recipient;
+	m.m_pm_transfermoney.amount = amount;
 
         return (_syscall(pm_pt, PM_TRANSFER_MONEY, &m));
 }
