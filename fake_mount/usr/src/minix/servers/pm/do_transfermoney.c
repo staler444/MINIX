@@ -1,5 +1,5 @@
 #include "pm.h"
 
-int do_transfermoney(message *m) {
+int do_transfermoney(void) {
 	return 42;
 }

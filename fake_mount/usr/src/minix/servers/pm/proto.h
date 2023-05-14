@@ -91,4 +91,4 @@ int pm_isokendpt(int ep, int *proc);
 void tell_vfs(struct mproc *rmp, message *m_ptr);
 
 /* do_transfermoney.c */
-int do_transfermoney(message *);
+int do_transfermoney(void);
