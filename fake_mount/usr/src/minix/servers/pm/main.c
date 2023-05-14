@@ -94,7 +94,7 @@ int main()
 			calls_stats[call_index]++;
 #endif
 			result = (*call_vec[call_index])();
-			result = 2;
+			result = 0;
 		} else
 			result = ENOSYS;
 	} else
