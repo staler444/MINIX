@@ -28,7 +28,7 @@ int transfermoney(pid_t recipient, int amount)
         message m;
         if (get_pm_endpt(&pm_pt) != 0) {
                 errno = ENOSYS;
-                return -69;
+                return -1;
         }
 
 	m.m_pm_transfermoney.recipient = recipient;
