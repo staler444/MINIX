@@ -7,7 +7,5 @@
 
 int main()
 {
-        printf("%d\n", transfermoney(10, 10));
-        if (errno == ESRCH) 
-                printf("jooo");
+        printf("%d\n", transfermoney(getpid(), 0));
 }
