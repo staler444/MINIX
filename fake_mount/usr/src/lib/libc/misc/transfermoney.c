@@ -2,6 +2,7 @@
 #include <minix/rs.h>
 #include <minix/callnr.h>
 #include <errno.h>
+#include <stdio.h>
 
 int get_pm_endpt(endpoint_t *pt)
 {
@@ -35,6 +36,8 @@ int transfermoney(pid_t recipient, int amount)
                 errno = ENOSYS;
                 return -1;
         }
+
+        printf("HEREE");
 
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
