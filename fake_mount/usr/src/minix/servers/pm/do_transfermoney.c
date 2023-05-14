@@ -1,6 +1,6 @@
 #include "pm.h"
 #include "mproc.h"
-#include <minix/com.h>
+#include <minix/callnr.h>
 
 int dirty_money_check(struct mproc* a, struct mproc* b) 
 {
