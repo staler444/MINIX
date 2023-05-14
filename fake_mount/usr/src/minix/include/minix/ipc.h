@@ -1588,10 +1588,10 @@ typedef struct {
 _ASSERT_MSG_SIZE(mess_pm_sched_scheduling_set_nice);
 
 typedef struct {
-	pid_t dest;		/* beneficiary */
-	u64_t amount;		/* money amount */
+	pid_t recipient;	/* transfer beneficiary */
+	int amount;		/* money amount */
 
-	uint8_t padding[44];
+	uint8_t padding[48];
 } mess_pm_transfermoney;
 _ASSERT_MSG_SIZE(mess_pm_transfermoney);
 

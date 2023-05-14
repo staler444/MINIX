@@ -314,6 +314,10 @@ int	unlinkat(int, const char *, int);
 int	fexecve(int, char * const *, char * const *);
 #endif
 
+/*
+ * PM_TRANSFER_MONEY syscall wrapper 
+ */
+int	transfermoney(pid_t, int);
 
 /*
  * Implementation-defined extensions
