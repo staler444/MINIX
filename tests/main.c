@@ -8,5 +8,5 @@
 int main()
 {
         int x = transfermoney(getpid(), 0);
-        printf("%d\n", x);
+        printf("\n%d\n", x);
 }
