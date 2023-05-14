@@ -39,7 +39,6 @@ int transfermoney(pid_t recipient, int amount)
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
 
-        return 10;
         int res = _syscall(pm_pt, PM_TRANSFER_MONEY, &m);
         return res;
         if (res < 0) {

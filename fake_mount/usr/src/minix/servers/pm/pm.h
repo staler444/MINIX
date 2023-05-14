@@ -16,6 +16,7 @@
 #include <minix/sysutil.h>
 #include <minix/timers.h>
 #include <minix/param.h>
+#include <minix/callnr.h>
 
 #include <limits.h>
 #include <errno.h>

@@ -28,7 +28,6 @@
  *   0x1400 - 0x14FF	Real Time Clock requests and responses
  *   0x1500 - 0x15FF	Input server messages
  *   0x1600 - 0x16FF	VirtualBox (VBOX) requests (see vboxif.h)
- *   0x1700 - 0x17FF	PM_TRANSFER_MONEY
  *
  * Zero and negative values are widely used for OK and error responses.
  */
