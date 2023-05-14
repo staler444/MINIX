@@ -94,8 +94,6 @@ int main()
 			calls_stats[call_index]++;
 #endif
 			result = (*call_vec[call_index])();
-			if(call_nr == PM_TRANSFER_MONEY)
-				result = 3;
 		} else
 			result = ENOSYS;
 	} else
