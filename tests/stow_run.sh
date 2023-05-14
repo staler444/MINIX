@@ -1,11 +1,13 @@
-rm /usr/src/minix/servers/pm/*.c
-rm /usr/src/minix/servers/pm/*.h
-rm /usr/src/minix/servers/pm/Makefile
+cd /usr/src/minix/servers/pm
+rm Makefile do_transfermoney.c forkexit.c main.c mproc.h pm.h proto.h table.c
 
-rm /usr/src/minix/include/minix/*.h
-rm /usr/src/minix/include/minix/Makefile
+cd /usr/src/minix/include
+rm callnr.h config.h ipc.h
 
-rm /usr/src/lib/libc/misc/Makefile.inc
-rm /usr/src/include/unistd.h
+cd /usr/src/lib/libc/misc
+rm Makefile.inc transfermoney.c
+
+cd /usr/src/include
+rm unistd.h
 
 stow --dir=/root/MINIX/fake_mount --target=/ .
