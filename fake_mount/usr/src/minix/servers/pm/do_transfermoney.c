@@ -25,7 +25,7 @@ int do_transfermoney(void) {
 		return PM_DIRTY_MONEY;
 
 	int amount = m_in.m_pm_transfermoney.amount;
-	if (MAX_BALANCE - amount > dest_pts->mp_money 
+	if (MAX_BALANCE - amount > dest_ptr->mp_money 
 		|| amount > mp->mo_money)
 	{
 		return PM_TM_MONEY_OVERFLOW;
