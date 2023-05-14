@@ -1,5 +1,5 @@
 #include "pm.h"
-#include <errno.h>
+#include <minix/com.h>
 
 struct mproc *get_dest_proc() {
 	pid_t dest_pid = m_in.m_pm.transfermoney.recipient;

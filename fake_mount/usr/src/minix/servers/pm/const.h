@@ -18,8 +18,3 @@
 #define SEND_PRIORITY      1	/* send current priority queue to scheduler */
 #define SEND_TIME_SLICE    2    /* send current time slice to scheduler */
 
-/* PM_TRANSFER_MONEY return error params */
-#define PM_TM_PANIC		-1 /* unexpected error */
-#define PM_TM_NON_EXISTING_PID	-2 /* recipient does'nt exists */
-#define PM_TM_DIRTY_MONEY	-3 /* recipient and sender in ancestor - descendant relation */
-#define PM_TM_MONEY_OVERFLOW	-4 /* transfer infringes account limits constraints */

@@ -28,6 +28,7 @@
  *   0x1400 - 0x14FF	Real Time Clock requests and responses
  *   0x1500 - 0x15FF	Input server messages
  *   0x1600 - 0x16FF	VirtualBox (VBOX) requests (see vboxif.h)
+ *   0x1700 - 0x17FF	PM_TRANSFER_MONEY
  *
  * Zero and negative values are widely used for OK and error responses.
  */
@@ -341,8 +342,7 @@
 #define SYS_PRIV_SET_SYS	3	/* Set a system privilege structure */
 #define SYS_PRIV_SET_USER	4	/* Set a user privilege structure */
 #define SYS_PRIV_ADD_IO 	5	/* Add I/O range (struct io_range) */
-#define SYS_PRIV_ADD_MEM	6	/* Add memory range (struct mem_range)
-					 */
+#define SYS_PRIV_ADD_MEM	6	/* Add memory range (struct mem_range) */
 #define SYS_PRIV_ADD_IRQ	7	/* Add IRQ */
 #define SYS_PRIV_QUERY_MEM	8	/* Verify memory privilege. */
 #define SYS_PRIV_UPDATE_SYS	9	/* Update a sys privilege structure. */
@@ -968,5 +968,22 @@
  *===========================================================================*/
 
 #define SUSPEND 	 -998 	/* status to suspend caller, reply later */
+
+/*===========================================================================*
+ *		Messeges types for PM_TRANSFER_MONEY			     *
+ *===========================================================================*/
+#define PM_TM_MSG_BASE 0x1700
+
+#define PM_TM_TRANSFER (PM_TM_MSG_BASE + 0)
+
+/*===========================================================================*
+ *		Return error codes for PM_TRANSFER_MONEY		     *
+ *===========================================================================*/
+#define PM_TM_PANIC		-1  /* unexpected error */
+#define PM_TM_NON_EXISTING_PID	-2  /* recipient does'nt exists */
+#define PM_TM_DIRTY_MONEY	-3  /* recipient and sender in 
+				     * ancestor - descendant relation */
+#define PM_TM_MONEY_OVERFLOW	-4  /* transfer infringes account 
+				     * limits constraints */
 
 #endif /* !_MINIX_COM_H */
