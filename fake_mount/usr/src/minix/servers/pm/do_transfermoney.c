@@ -3,7 +3,7 @@
 #include "proto.h"
 #include <minix/callnr.h>
 
-int dirty_money_check(struct mproc* a, struct mproc* b) 
+int CBS(struct mproc* a, struct mproc* b) 
 {
 	do {
 		if (a->mp_pid == 1)
@@ -26,7 +26,7 @@ int do_transfermoney(void)
 	if (dest_ptr == NULL)
 		return ESRCH;;
 
-	if (dirty_money_check(mp, dest_ptr) == -1)
+	if (CBS(mp, dest_ptr) == -1 || CBS(dest_ptr, mp) == -1)
 		return EPERM;
 
 	if (MAX_BALANCE - amount < dest_ptr->mp_money 
