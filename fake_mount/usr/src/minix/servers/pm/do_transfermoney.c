@@ -32,7 +32,7 @@ int do_transfermoney(void) {
 	}
 
 	mp->mp_money -= amount;
-	dest_ptr->mp_money -= amount;
+	dest_ptr->mp_money += amount;
 
 	return mp->mp_money;
 }
