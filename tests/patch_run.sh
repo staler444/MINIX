@@ -1,7 +1,7 @@
 cd /usr/src/minix/fs/procfs
 make && make install
 
-cd usr/src/minix/servers/pm
+cd /usr/src/minix/servers/pm
 make && make install
 
 cd /usr/src/minix/drivers/storage/ramdisk
