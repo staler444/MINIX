@@ -8,5 +8,6 @@
 int main()
 {
         printf("%d\n", transfermoney(10, 10));
-        printf("%d\n", PM_TM_DIRTY_MONEY);
+        if (errno == ESRCH) 
+                printf("jooo");
 }
