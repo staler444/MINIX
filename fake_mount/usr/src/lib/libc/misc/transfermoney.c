@@ -25,7 +25,7 @@ void set_errno(int error_code)
 
 int transfermoney(pid_t recipient, int amount)
 {
-        printf("HERE");
+        return 41;
         if (amount < 0) {
                 errno = EINVAL;
                 return -1;
@@ -38,7 +38,7 @@ int transfermoney(pid_t recipient, int amount)
                 return -1;
         }
 
-        printf("HEREE");
+        return 42;
 
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
