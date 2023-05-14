@@ -41,6 +41,7 @@ int transfermoney(pid_t recipient, int amount)
 
         int res = (_syscall(pm_pt, PM_TRANSFER_MONEY, &m));
         return res;
+
         if (res < 0) {
                 set_errno(res);
                 return -1;
