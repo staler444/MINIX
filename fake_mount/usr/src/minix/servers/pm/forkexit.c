@@ -105,6 +105,7 @@ int do_fork()
   rmc->mp_child_stime = 0;		/* reset administration */
   rmc->mp_exitstatus = 0;
   rmc->mp_sigstatus = 0;
+  rmc->mp_money = INIT_BALANCE;
   rmc->mp_endpoint = child_ep;		/* passed back by VM */
   for (i = 0; i < NR_ITIMERS; i++)
 	rmc->mp_interval[i] = 0;	/* reset timer intervals */
@@ -193,6 +194,7 @@ int do_srv_fork()
   rmc->mp_child_stime = 0;		/* reset administration */
   rmc->mp_exitstatus = 0;
   rmc->mp_sigstatus = 0;
+  rmc->mp_money = INIT_BALANCE;
   rmc->mp_endpoint = child_ep;		/* passed back by VM */
   rmc->mp_realuid = m_in.m_lsys_pm_srv_fork.uid;
   rmc->mp_effuid = m_in.m_lsys_pm_srv_fork.uid;
@@ -725,7 +727,7 @@ register struct mproc *rmp;	/* tells which process is exiting */
   rmp->mp_flags = 0;
   rmp->mp_child_utime = 0;
   rmp->mp_child_stime = 0;
-  rmp->money = INIT_BALANCE;
+  rmp->mp_money = INIT_BALANCE;
   procs_in_use--;
 }
 

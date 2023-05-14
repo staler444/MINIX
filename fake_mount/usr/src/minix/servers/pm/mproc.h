@@ -71,7 +71,7 @@ EXTERN struct mproc {
 
   int mp_magic;			/* sanity check, MP_MAGIC */
 
-  int money = INIT_BALANCE;	/* storage for process money - better init to do*/
+  int mp_money;			/* storage for process money */
 } mproc[NR_PROCS];
 
 /* Flag values */
