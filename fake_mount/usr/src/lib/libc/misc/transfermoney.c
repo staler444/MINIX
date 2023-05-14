@@ -25,6 +25,7 @@ void set_errno(int error_code)
 
 int transfermoney(pid_t recipient, int amount)
 {
+        printf("HERE");
         if (amount < 0) {
                 errno = EINVAL;
                 return -1;
