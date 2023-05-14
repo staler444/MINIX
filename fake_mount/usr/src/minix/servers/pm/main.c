@@ -18,6 +18,7 @@
 #include <minix/minlib.h>
 #include <minix/type.h>
 #include <minix/vm.h>
+#include <minix/config.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <fcntl.h>
