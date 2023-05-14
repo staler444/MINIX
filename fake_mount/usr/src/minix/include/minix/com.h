@@ -974,7 +974,7 @@
  *===========================================================================*/
 #define PM_TM_MSG_BASE 0x1700
 
-#define PM_TM_TRANSFER (PM_TM_MSG_BASE + 0)
+#define PM_TM_MSG_TRANSFER (PM_TM_MSG_BASE + 0)
 
 /*===========================================================================*
  *		Return error codes for PM_TRANSFER_MONEY		     *
