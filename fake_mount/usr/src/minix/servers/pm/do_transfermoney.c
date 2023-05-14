@@ -29,7 +29,7 @@ int do_transfermoney(void)
 	if (dirty_money_check(mp, dest_ptr) == -1)
 		return EPERM;
 
-	if (MAX_BALANCE - amount > dest_ptr->mp_money 
+	if (MAX_BALANCE - amount < dest_ptr->mp_money 
 		|| amount > mp->mp_money)
 	{
 		return EINVAL;
