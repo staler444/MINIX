@@ -8,20 +8,6 @@ int get_pm_endpt(endpoint_t *pt)
         return minix_rs_lookup("pm", pt);
 }
 
-void set_errno(int error_code)
-{
-        switch (error_code) {
-                case PM_TM_NON_EXISTING_PID :
-                        errno = ESRCH;
-                case PM_TM_DIRTY_MONEY :
-                        errno = EPERM;
-                case PM_TM_MONEY_OVERFLOW :
-                        errno = EINVAL;
-                default : 
-                        errno = ENOSYS;
-        }
-}
-
 int transfermoney(pid_t recipient, int amount)
 {
 	endpoint_t pm_pt;
