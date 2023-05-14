@@ -1,5 +1,5 @@
 cd /usr/src
-make includes 
+# make includes 
 cd /usr/src/minix/servers/pm
 make && make install 
 cd /usr/src/lib/libc
