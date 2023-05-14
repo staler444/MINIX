@@ -16,8 +16,9 @@ int dirty_money_check(struct mproc* a, struct mproc* b)
 
 int do_transfermoney(void) 
 {
-	return 1;
 	pid_t dest_pid = m_in.m_pm_transfermoney.recipient;
+	int amount = m_in.m_pm_transgermoney.amount;
+
 	struct mproc* dest_ptr = find_proc(dest_pid);
 	if (dest_ptr == NULL)
 		return PM_TM_NON_EXISTING_PID;

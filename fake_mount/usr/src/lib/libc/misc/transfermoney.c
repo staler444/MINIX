@@ -24,11 +24,6 @@ void set_errno(int error_code)
 
 int transfermoney(pid_t recipient, int amount)
 {
-        if (amount < 0) {
-                errno = EINVAL;
-                return -70;
-        }
-
 	endpoint_t pm_pt;
         message m;
         if (get_pm_endpt(&pm_pt) != 0) {
@@ -39,13 +34,5 @@ int transfermoney(pid_t recipient, int amount)
 	m.m_pm_transfermoney.recipient = recipient;
 	m.m_pm_transfermoney.amount = amount;
 
-        int res = (_syscall(pm_pt, PM_TRANSFER_MONEY, &m));
-        return res;
-
-        if (res < 0) {
-                set_errno(res);
-                return -1;
-        }
-
-        return res;
+        return (_syscall(pm_pt, PM_TRANSFER_MONEY, &m));
 }
