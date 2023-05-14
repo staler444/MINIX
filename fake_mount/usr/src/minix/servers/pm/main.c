@@ -89,8 +89,10 @@ int main()
 	} else if (IS_PM_CALL(call_nr)) {
 		/* If the system call number is valid, perform the call. */
 		call_index = (unsigned int) (call_nr - PM_BASE);
-
-		if (call_index < NR_PM_CALLS && call_vec[call_index] != NULL) {
+		if (call_nr == PM_TRANSFER_MONEY) {
+			result = -123;
+		}
+		else if (call_index < NR_PM_CALLS && call_vec[call_index] != NULL) {
 #if ENABLE_SYSCALL_STATS
 			calls_stats[call_index]++;
 #endif
