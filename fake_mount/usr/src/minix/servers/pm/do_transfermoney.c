@@ -14,7 +14,9 @@ int dirty_money_check(struct mproc* a, struct mproc* b)
 	return -1;
 }
 
-int do_transfermoney(void) {
+int do_transfermoney(void) 
+{
+	return 1;
 	pid_t dest_pid = m_in.m_pm_transfermoney.recipient;
 	struct mproc* dest_ptr = find_proc(dest_pid);
 	if (dest_ptr == NULL)
