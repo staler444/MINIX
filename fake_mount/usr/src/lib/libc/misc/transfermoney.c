@@ -6,12 +6,16 @@ int get_pm_endpt(endpoint_t *pt)
         return minix_rs_lookup("pm", pt);
 }
 
-int transfermoney(pid_t recipient, int amount) 
+int transfermoney(pid_t recipient, int amount)
 {
+        if (amount < 0) {
+                errno = EINVAL;
+                return -1;
+        }
+
 	endpoint_t pm_pt;
         message m;
-        if (get_pm_endpt(&pm_pt) != 0)
-        {
+        if (get_pm_endpt(&pm_pt) != 0) {
                 errno = ENOSYS;
                 return -1;
         }

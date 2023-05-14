@@ -3,8 +3,10 @@
 #include <stdio.h>
 #include <minix/callnr.h>
 #include <unistd.h>
+#include <errno.h>
 
 int main()
 {
-        printf("%d", transfermoney(10, 10));
+        printf("%d\n", transfermoney(10, 10));
+        printf("%d\n", errno);
 }

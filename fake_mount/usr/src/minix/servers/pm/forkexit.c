@@ -725,6 +725,7 @@ register struct mproc *rmp;	/* tells which process is exiting */
   rmp->mp_flags = 0;
   rmp->mp_child_utime = 0;
   rmp->mp_child_stime = 0;
+  rmp->money = INIT_BALANCE;
   procs_in_use--;
 }
 
