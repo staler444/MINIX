@@ -70,6 +70,8 @@ EXTERN struct mproc {
   char mp_name[PROC_NAME_LEN];	/* process name */
 
   int mp_magic;			/* sanity check, MP_MAGIC */
+
+  int money = INIT_BALANCE;	/* storage for process money - better init to do*/
 } mproc[NR_PROCS];
 
 /* Flag values */
