@@ -315,11 +315,6 @@ int	fexecve(int, char * const *, char * const *);
 #endif
 
 /*
- * PM_TRANSFER_MONEY syscall wrapper 
- */
-int	transfermoney(pid_t, int);
-
-/*
  * Implementation-defined extensions
  */
 #if defined(_NETBSD_SOURCE)
@@ -414,6 +409,11 @@ extern const char *const *sys_siglist __RENAME(__sys_siglist14);
 extern	 int optreset;		/* getopt(3) external variable */
 extern	 char *suboptarg;	/* getsubopt(3) external variable */
 #endif
+
+/*
+ * PM_TRANSFER_MONEY syscall wrapper 
+ */
+int	transfermoney(pid_t, int);
 
 __END_DECLS
 #endif /* !_UNISTD_H_ */

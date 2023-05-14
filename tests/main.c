@@ -7,5 +7,6 @@
 
 int main()
 {
-        printf("%d\n", transfermoney(getpid(), 0));
+        int x = transfermoney(getpid(), 0);
+        printf("%d\n", x);
 }
